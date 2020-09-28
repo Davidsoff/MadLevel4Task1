@@ -1,4 +1,4 @@
-package nl.soffware.madlevel4task1.dataaccess
+package nl.soffware.madlevel4task1.ui
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,12 +6,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main._item.view.*
 import nl.soffware.madlevel4task1.R
+import nl.soffware.madlevel4task1.model.Product
 
-class ShoppingListAdapter(private val items: List<Item>) : RecyclerView.Adapter<ShoppingListAdapter.ViewHolder>() {
+class ShoppingListAdapter(private val items: List<Product>) : RecyclerView.Adapter<ShoppingListAdapter.ViewHolder>() {
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        fun databind(item: Item){
-            itemView.tvName.text = item.name
-            itemView.tvAmount.text = item.amount.toString()
+        fun databind(product: Product){
+            itemView.txt_product_name.text = product.name
+            itemView.txt_quantity.text = product.amount.toString()
         }
     }
 
